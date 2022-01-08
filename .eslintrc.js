@@ -1,5 +1,5 @@
 module.exports = {
-  env: { commonjs: true, es2021: true, node: true, jest: true },
+  env: { commonjs: true, es2021: true, node: true, jest: true, jasmine: true },
   extends: ['airbnb-base', 'eslint:recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: { ecmaVersion: 12 },
@@ -12,7 +12,7 @@ module.exports = {
     'no-console': 'off',
     'prettier/prettier': [
       'error',
-      { endOfLine: 'auto', singleQuote: true, parser: 'flow' }
+      { endOfLine: 'auto', singleQuote: true, parser: 'typescript' }
     ],
     'no-use-before-define': ['error', { functions: true, classes: true }],
     'arrow-body-style': 'off',
@@ -20,6 +20,7 @@ module.exports = {
     'no-var': 'error',
     'no-unused-expressions': 'off',
     'no-underscore-dangle': 'off',
+    'consistent-return': 'off',
     'prefer-const': 'error',
     'import/extensions': [
       'error',

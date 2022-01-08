@@ -1,9 +1,8 @@
 import express from 'express'
-import authRouter from './api/auth'
-import usersRouter from './api/user'
+import usersRouter from './api/users'
 
-const routes = express.Router()
+const router = express.Router()
 
-routes.use('/auth', authRouter)
-routes.use('/users', usersRouter)
-export default routes
+router.use('/users', usersRouter)
+
+export default router
