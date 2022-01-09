@@ -57,7 +57,7 @@ ENV=dev
 To start the server appplication run the following command. 
 
 ```sh
-yarn watch
+yarn start:dev
 ```
 The application is configured to run on localhost port 5000 - http://localhost:5000.
 
@@ -74,7 +74,7 @@ The test database is pulled down after tests are complete.
 The following command can be used to compile and build the project from typescript to javascript.
 
 ```sh
-yarn build
+yarn start:prod
 ```
 Once the build is complete the built project can be found in the dist folder. To start the built application you can run the following command in the root folder of the project.
 ```sh
