@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "tsc && set ENV=test && db-migrate --env test up && jasmine && db-migrate reset --env test",
+    "test": "tsc && npm run db:reset &&set ENV=test&& npm run db:up && jasmine && npm run db:reset && set ENV=dev",
     "start:dev": "nodemon --watch \"./src/index.ts\" --exec \"npx ts-node src/index.ts\"",
     "clean": "rimraf build/",
+    "db:up": "npx db-migrate --env test up && npx db-migrate up",
+    "db:reset": "npx db-migrate --env test reset && npx db-migrate reset",
+    "db:down": "npx db-migrate --env test down && npx db-migrate down",
     "build": "yarn clean && npx tsc",
     "start:prod": "npm run build && nodemon build/index.js",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",

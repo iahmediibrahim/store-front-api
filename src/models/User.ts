@@ -7,12 +7,12 @@ const pepper = process.env.BCYPT_PASSWORD as string
 const saltrounds = process.env.SALT_ROUNDS as string
 
 export type User = {
-  id?: string | undefined
+  id?: string
   username: string
   first_name: string
   last_name: string
-  password?: string | undefined
-  password_digest?: string | undefined
+  password?: string
+  password_digest?: string
 }
 
 export class UserStore {

@@ -1,5 +1,11 @@
 import express from 'express'
 import {
+  createOrder,
+  userActiveOrders,
+  userCompletedOrders,
+  usersOrders
+} from '../../handlers/Orders'
+import {
   create,
   deleteUser,
   index,
@@ -39,5 +45,24 @@ usersRouter
     res.sendStatus(200)
   })
   .post(Cors, login)
+usersRouter
+  .route('/:id/orders')
+  .options(corsWithOptions, (req, res) => {
+    res.sendStatus(200)
+  })
+  .get(Cors, verifyToken, usersOrders)
+  .post(Cors, verifyToken, createOrder)
 
+usersRouter
+  .route('/:id/orders/active')
+  .options(corsWithOptions, (req, res) => {
+    res.sendStatus(200)
+  })
+  .get(Cors, verifyToken, userActiveOrders)
+usersRouter
+  .route('/:id/orders/completed')
+  .options(corsWithOptions, (req, res) => {
+    res.sendStatus(200)
+  })
+  .get(Cors, verifyToken, userCompletedOrders)
 export default usersRouter

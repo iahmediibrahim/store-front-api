@@ -21,6 +21,7 @@ module.exports = {
     'no-unused-expressions': 'off',
     'no-underscore-dangle': 'off',
     'consistent-return': 'off',
+    'class-methods-use-this': 'off',
     'prefer-const': 'error',
     'import/extensions': [
       'error',
