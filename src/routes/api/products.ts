@@ -33,6 +33,6 @@ productsRouter
   .options(corsWithOptions, (req, res) => {
     res.sendStatus(200)
   })
-  .post(Cors, getProductByCategory)
+  .get(Cors, getProductByCategory)
 
 export default productsRouter
